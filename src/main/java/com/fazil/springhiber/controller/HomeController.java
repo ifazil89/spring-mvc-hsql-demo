@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fazil.springhiber.model.User;
+import com.fazil.springhiber.model.UserLoginInfo;
 import com.fazil.springhiber.service.UserService;
 
 @Controller
@@ -19,7 +19,7 @@ public class HomeController {
 	
 	@RequestMapping(value={"/","/list"})
 	public String listAllUsers(ModelMap model){
-		List<User> listUsers = userService.findAllUsers();
+		List<UserLoginInfo> listUsers = userService.findAllUsers();
 		model.addAttribute("users", listUsers);
 		return "home";
 	}
