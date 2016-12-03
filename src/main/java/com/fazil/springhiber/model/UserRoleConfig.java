@@ -1,5 +1,5 @@
-/**
- * Category.java
+/*
+ * UserRoleConfig.java
  */
 package com.fazil.springhiber.model;
 
@@ -7,24 +7,26 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Product Category 
+ * Role assigned for that user is configured here.
+ * Allowed values are ROLE_ADMIN/ROLE_USER/ROLE_CUSTOMER
  * @author fazil
  *
  */
 @Entity
-@Table(name="CATEGORY")
-public class Category {
+@Table(name="USER_ROLE_CONFIG")
+public class UserRoleConfig {
 
-	@Id
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="NAME")
-	private String categoryName;
+	@Column(name="USER_ID")
+	private String userId;
+	
+	@Column(name="USER_ROLE")
+	private String userRole;
 	
 	@Column(name="STATUS")
 	private boolean status;
@@ -56,17 +58,31 @@ public class Category {
 	}
 
 	/**
-	 * @return the categoryName
+	 * @return the userId
 	 */
-	public String getCategoryName() {
-		return categoryName;
+	public String getUserId() {
+		return userId;
 	}
 
 	/**
-	 * @param categoryName the categoryName to set
+	 * @param userId the userId to set
 	 */
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	/**
+	 * @return the userRole
+	 */
+	public String getUserRole() {
+		return userRole;
+	}
+
+	/**
+	 * @param userRole the userRole to set
+	 */
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 
 	/**
@@ -138,6 +154,4 @@ public class Category {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-
-	
 }
