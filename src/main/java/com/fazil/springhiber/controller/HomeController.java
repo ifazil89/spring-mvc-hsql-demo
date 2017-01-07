@@ -7,20 +7,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fazil.springhiber.model.UserLoginInfo;
+import com.fazil.springhiber.model.UserLoginDetail;
 import com.fazil.springhiber.service.UserService;
 
 @Controller
-@RequestMapping("/")
+//@SessionAttributes(names="userSession")
 public class HomeController {
 	
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value={"/","/list"})
+	@RequestMapping(value={"/home","/list"})
 	public String listAllUsers(ModelMap model){
-		List<UserLoginInfo> listUsers = userService.findAllUsers();
+		List<UserLoginDetail> listUsers = userService.findAllUsers();
+		//model.addAttribute("user", userDetail);
 		model.addAttribute("users", listUsers);
 		return "home";
 	}
 }
+

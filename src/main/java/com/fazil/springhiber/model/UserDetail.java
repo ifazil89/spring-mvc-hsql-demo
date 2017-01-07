@@ -5,6 +5,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +16,7 @@ public class UserDetail {
 
 	@Id
 	@Column(name="USER_ID")
-	private long userId;
+	private String userId;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -27,6 +30,8 @@ public class UserDetail {
 	@Column(name="EMAIL_ID")
 	private String emailId;
 	
+	@OneToOne
+	@JoinColumn(name="ADDRESS_ID")
 	private Address address;
 	
 	@Column(name="STATUS")
@@ -47,14 +52,14 @@ public class UserDetail {
 	/**
 	 * @return the userId
 	 */
-	public long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
 	/**
 	 * @param userId the userId to set
 	 */
-	public void setUserId(long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 

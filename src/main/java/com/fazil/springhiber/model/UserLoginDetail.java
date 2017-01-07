@@ -1,5 +1,5 @@
 /*
- * UserLoginInfo.java
+ * UserLoginDetail.java
  */
 package com.fazil.springhiber.model;
 
@@ -19,8 +19,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="USER_LOGIN_INFO")
-public class UserLoginInfo {
+@Table(name="USER_LOGIN_DETAIL")
+public class UserLoginDetail {
 
 	@Id
 	@Column(name="ID")

@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -19,6 +20,7 @@ import javax.persistence.Table;
 @Table(name="USER_ROLE_CONFIG")
 public class UserRoleConfig {
 
+	@Id
 	@Column(name="ID")
 	private long id;
 	

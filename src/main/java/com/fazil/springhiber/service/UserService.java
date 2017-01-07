@@ -2,10 +2,12 @@ package com.fazil.springhiber.service;
 
 import java.util.List;
 
-import com.fazil.springhiber.model.UserLoginInfo;
+import com.fazil.springhiber.model.UserDetail;
+import com.fazil.springhiber.model.UserLoginDetail;
 
 public interface UserService {
 
-	UserLoginInfo findById(long id);
-	List<UserLoginInfo> findAllUsers();
+	UserLoginDetail findById(long id);
+	List<UserLoginDetail> findAllUsers();
+	UserDetail getUserDetailByLogin(UserLoginDetail user);
 }

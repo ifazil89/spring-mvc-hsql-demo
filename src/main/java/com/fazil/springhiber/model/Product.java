@@ -8,6 +8,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -29,7 +31,7 @@ public class Product {
 	@Column(name="NAME")
 	private String productName;
 	
-	@Column(name="CATEGORY_ID")
+	@ManyToOne
 	private Category category;
 	
 	@Column(name="PRICE")

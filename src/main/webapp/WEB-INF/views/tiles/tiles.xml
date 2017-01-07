@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3.0.dtd">
+<tiles-definitions>
+	<!-- Base definitions -->
+	<definition name="base-definition"
+				template="/WEB-INF/views/tiles/layouts/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/views/tiles/template/header.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/template/menu.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/template/footer.jsp"/>
+	</definition>
+	
+	<!-- Login base sefinition -->
+	<definition name="login-base-definition"
+				template="/WEB-INF/views/tiles/layouts/login-layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/views/tiles/template/header.jsp"/>		
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/template/footer.jsp"/>
+	</definition>
+	
+	
+	<!-- Login definition -->
+	<definition name="login" extends="login-base-definition">
+		<put-attribute name="title" value="Login"/>
+		<put-attribute name="body" value="/WEB-INF/views/pages/login.jsp"/>
+	</definition>
+	
+	<!-- Home definition -->
+	<definition name="home" extends="base-definition">
+		<put-attribute name="title" value="Home"/>
+		<put-attribute name="body" value="/WEB-INF/views/pages/home.jsp"/>
+	</definition>
+</tiles-definitions>

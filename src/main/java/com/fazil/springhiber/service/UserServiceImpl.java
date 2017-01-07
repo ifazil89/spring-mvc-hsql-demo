@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fazil.springhiber.dao.UserDAO;
-import com.fazil.springhiber.model.UserLoginInfo;
+import com.fazil.springhiber.model.UserDetail;
+import com.fazil.springhiber.model.UserLoginDetail;
 
 @Service(value="userSerive")
 @Transactional
@@ -18,13 +19,18 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userDao;
 	
 	@Override
-	public UserLoginInfo findById(long id) {
+	public UserLoginDetail findById(long id) {
 		return userDao.findById(id);
 	}
 
 	@Override
-	public List<UserLoginInfo> findAllUsers() {
+	public List<UserLoginDetail> findAllUsers() {
 		return userDao.findAllUsers();
+	}
+
+	@Override
+	public UserDetail getUserDetailByLogin(UserLoginDetail user) {
+		return userDao.getUserDetailByLogin(user);
 	}
 
 }

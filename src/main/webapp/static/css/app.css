@@ -1,0 +1,39 @@
+body{
+	width : 90% !important;
+	margin: auto;
+}
+#header{
+	width : 100%;
+	height : 100px;	
+	margin-bottom: 10px;
+}
+#content{
+	width : 100%;
+	background-color: #f3f3f3;
+	min-height: 200px;
+}
+#footer{
+	width : 100%;
+	height : 50px;
+	background-color: black;
+	color : white;
+}
+
+.ban_title{
+	font-family: monospace;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 20px;
+}
+
+.login_panel{
+	width : 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 5%;
+	background-color: white;
+	display: inline-block;	
+}
+.margin_left_40per{
+	margin-left : 40%;
+}
